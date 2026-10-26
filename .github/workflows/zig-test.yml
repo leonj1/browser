@@ -41,7 +41,7 @@ jobs:
     name: zig test using v8 in debug mode
     timeout-minutes: 15
 
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
 
     steps:
       - uses: actions/checkout@v4
@@ -64,7 +64,7 @@ jobs:
     # Don't run the CI with draft PR.
     if: github.event.pull_request.draft == false
 
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
 
     steps:
       - uses: actions/checkout@v4
@@ -98,7 +98,7 @@ jobs:
     # Don't execute on PR
     if: github.event_name != 'pull_request'
 
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     timeout-minutes: 15
 
     container:

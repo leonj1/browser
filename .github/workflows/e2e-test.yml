@@ -42,7 +42,7 @@ jobs:
   zig-build-release:
     name: zig build release
 
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     timeout-minutes: 15
 
     # Don't run the CI with draft PR.
@@ -72,7 +72,7 @@ jobs:
     name: demo-scripts
     needs: zig-build-release
 
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     timeout-minutes: 15
 
     steps:
@@ -122,7 +122,7 @@ jobs:
     name: wba-demo-scripts
     needs: zig-build-release
 
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     timeout-minutes: 15
 
     steps:
@@ -185,7 +185,7 @@ jobs:
     env:
       LIGHTPANDA_DISABLE_TELEMETRY: true
 
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     timeout-minutes: 5
 
     steps:
@@ -350,7 +350,7 @@ jobs:
     # Don't execute on PR
     if: github.event_name != 'pull_request'
 
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     timeout-minutes: 15
 
     container:
@@ -375,7 +375,7 @@ jobs:
     name: browser fetch
     needs: zig-build-release
 
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
 
     steps:
       - name: download artifact

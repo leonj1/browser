@@ -26,7 +26,7 @@ jobs:
       ARCH: x86_64
       OS: linux
 
-    runs-on: ubuntu-22.04
+    runs-on: [self-hosted, linux, x64]
     timeout-minutes: 20
 
     steps:
@@ -68,7 +68,7 @@ jobs:
       ARCH: aarch64
       OS: linux
 
-    runs-on: ubuntu-22.04-arm
+    runs-on: [self-hosted, linux, ARM64]
     timeout-minutes: 20
 
     steps:
@@ -112,7 +112,7 @@ jobs:
 
     # macos-14 runs on arm CPU. see
     # https://github.com/actions/runner-images?tab=readme-ov-file
-    runs-on: macos-14
+    runs-on: [self-hosted, macOS, ARM64]
     timeout-minutes: 20
 
     steps:
@@ -154,7 +154,7 @@ jobs:
       ARCH: x86_64
       OS: macos
 
-    runs-on: macos-14-large
+    runs-on: [self-hosted, macOS, x64]
     timeout-minutes: 20
 
     steps:

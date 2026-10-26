@@ -19,7 +19,7 @@ jobs:
   wpt-build-release:
     name: zig build release
 
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     timeout-minutes: 15
 
     steps:
@@ -45,7 +45,7 @@ jobs:
   wpt-build-runner:
     name: build wpt runner
 
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     timeout-minutes: 15
 
     steps:
@@ -128,7 +128,7 @@ jobs:
     name: perf-fmt
     needs: run-wpt
 
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     timeout-minutes: 15
 
     container:
